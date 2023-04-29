@@ -13,9 +13,6 @@ services:
     container_name: hospital-api
     ports:
       - "8088:80"
-    build:
-      context: .
-      dockerfile: Dockerfile
     environment:
       - ASPNETCORE_URLS=http://+:80
       - DATABASE_URL=postgresql://postgres:sawwinthant@patient_database:5432/hospital_api
@@ -29,9 +26,6 @@ services:
     container_name: React-JS
     ports:
       - "3000:3000"
-    build:
-      context: ./../../PatientPortal-React-JS-main/
-      dockerfile: Dockerfile
     networks:
       - dev
 
