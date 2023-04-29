@@ -6,7 +6,7 @@ networks:
 
 services:
   hospital-app:
-    image: sawlinthantdocker/hospital-dotnet-api
+    image: sawlinthant/patientportalwebapi:latest
     depends_on:
       - "patient_database"
 
@@ -22,7 +22,7 @@ services:
       - dev
 
   front-end:
-    image: sawlinthant/react-patientportal
+    image: sawlinthant/patientportalreactjs:latest
     container_name: React-JS
     ports:
       - "3000:3000"
