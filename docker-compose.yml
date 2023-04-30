@@ -40,7 +40,7 @@ services:
       - POSTGRES_DB=hospital_api
     restart: always
     volumes:
-      - ./Hospitalapi.sql:/docker-entrypoint-initdb.d
+      - ./Hospitalapi.sql:/docker-entrypoint-initdb.d/backup.sql
       - app_data:/var/lib/postgresql/data
     networks:
       - dev
