@@ -39,9 +39,11 @@ services:
       - POSTGRES_PASSWORD=sawwinthant
       - POSTGRES_DB=hospital_api
     restart: always
+    
     volumes:
-      - ./Hospitalapi.sql:/docker-entrypoint-initdb.d/backup.sql
-      - app_data:/var/lib/postgresql/data
+      - ./app_data:/var/lib/postgresql/data
+      - ./Hospitalapi.sql:/docker-entrypoint-initdb.d/Hospitalapi.sql
+      
     networks:
       - dev
 
@@ -57,6 +59,8 @@ services:
       - patient_database
     networks:
       - dev
+    volumes:
+      - ./pgadmin-data/:/var/lib/pgadmin/
 
 volumes:
   app_data:
